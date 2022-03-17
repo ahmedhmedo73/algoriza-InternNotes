@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>algoriza</title>
+    <meta name="description" content="this website for notes">
+</head>
+
+<body>
+    <b></b>     <strong></strong>   <i></i>     <em></em>
+    <mark></mark>  <u></u>  <small></small>   <del></del> <ins></ins> <sup></sup>   <sub></sub>
+    <a href="mailto:ahmed@gmail.com">mail Me</a>
+    <dl>
+        <dd>Angular</dd>
+        <dd>React</dd>
+        <dd>Vue</dd>
+    </dl>
+    <table>
+        <!-- arrange items in page -->
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td colspan="2">hi</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <!-- html entity -->
+    <p>&lt;</p>
+
+    <!-- we write source tag cause we should more than one extension for audio file  
+         type attribute for mime type-->
+    <audio controls autoplay loop muted >
+        <source src=""  type="audio/mpeg">
+        <source>
+        your browser dont support audio tag
+    </audio>
+    <!-- show img from poster untill video be ready -->
+    <video controls autoplay loop muted poster="img">
+        <source src=""  type="audio/mpeg">
+        <source>
+        your browser dont support audio tag
+        <track src="file.vtt" kind="subtitles" srclang="en" label="english">
+    </video>
+
+    <form action="">
+        <input type="hidden" name="ip" value="94587943">
+        <input type="text">
+        <input type="color">
+        <input type="range" min="0" max="100" step="20" value="50">
+        <input type="number" min="10" max="100" value="20" step="10"> 
+        <input type="date" name="" id="">
+        <input type="reset">
+        <!-- readonly    autofocus    disabled    required-->
+        <label for="se">select</label>
+        <select name="" id="se">
+            <optgroup label="id">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </optgroup>
+            <optgroup label="name">
+                <option value="ahmed">ahmed</option>
+                <option value="hamed">hamed</option>
+                <option value="hamad">hamad</option>
+                <option value="hamed">hamed</option>
+            </optgroup>
+        </select><br>
+        <input type="search"><br>
+        <input type="time"><br>
+        <input list="programming" name="prog">
+        <datalist id="programming">
+            <option value="Python">
+            <option value="PHP">
+            <option value="C#">
+            <option value="C">
+            <option value="C++">
+        </datalist><br>
+        <div style="width: 500px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. <wbr> Ipsam quo enim obcaecati natus! <wbr>Libero, illum! Odio animi perspiciatis praesentium quisquam?</div>
+    </form>
+    <pre>
+        <code>
+            int x = 10;
+            int z = 20;
+            int x = 10;
+        </code>
+    </pre>
+
+    <div role="checkbox" aria-checked="true" tabindex="0" aria-labelledby="plan1">plan one</div>
+    <label id="plan1">plan one label</label>
+    <div role="checkbox" aria-checked="true" tabindex="0" aria-labelledby="plan1">plan two</div>
+    <label id="plan1">plan two label</label>
+    <div role="checkbox" aria-checked="true" tabindex="0" aria-labelledby="plan1">plan three</div>
+    <label id="plan1">plan three label</label>
+</body>
+
+</html>
