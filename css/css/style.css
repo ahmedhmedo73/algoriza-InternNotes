@@ -1,0 +1,243 @@
+/* Background
+background-size: contain   cover     100% 100%
+*/
+/* Display
+  Block
+
+  - Take Full Width If No Width
+  - Don't Allow Elements Before And After It in The Same Line
+  - Respect Padding, Margin, Width, Height
+
+  Inline
+
+  - Do Not Repsepct Width, Height
+  - Respect Padding And Margin [ Just Wight + Left ]
+  - Allow Elements Before And After It in The Same Line
+
+  Inline-Block
+
+  - Allow Elements Before And After It in The Same Line
+  - Respect Padding, Margin, Width, Height
+
+*/
+/* Text
+   text-indent:100px;       but space before the text
+   white-space:no-wrap;     only property has no-wrap  
+   word-break:break-all;
+   text-overflow:ellipsis;      text text...
+   outline-offset:10px;     space between outline and border
+*/
+/* Inheirt 
+   parent{
+    border-color:red;
+   }
+   child{
+    border-color:inherit;       take the same color of parent's border
+   }
+*/
+/* Units
+    em     one time of parent size :
+            if parent font size = 20px  so em = 40px
+    rem    one time of root element size "html"  
+    %      percentage of parent size
+    vw     view port width 
+    vh     view port height
+*/
+/* Position
+   sticky    normal div untill you scroll the div will turn position fixed
+ */
+/* Z-index
+   z-index :-1;    will be behinde all elements
+ */
+/* List
+   list-style-type: disc , decimal etc.
+   list-style-position: outside , insdide
+*/
+/* Table
+   border-spacing  space between border and cells
+ */
+/* Pseudo Classes
+    hover   after   before  etc.
+    .ch:checked + label  { color:red;}
+    div:empty {display:none}
+    ::first-letter   ::first-line   ::selection{when you select text}
+    ::before   ::after      are very important
+*/
+/* increment counter & attr()
+.parent {
+    margin-bottom: 20px;
+    overflow: hidden;
+    counter-increment: members-counter;
+  }
+  .one {
+    background-color: #eee;
+    padding: 10px;
+    width: 600px;
+    float: left;
+    position: relative;
+  }
+  .one::before {
+    content: attr(data-text);
+    display: none;
+  }
+  .one:hover::before{
+     display: block;    
+  }
+  .one::after {
+    content: counter(members-counter);
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: bold;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .user {
+    background-color: #eee;
+    width: 50px;
+    margin-right: 20px;
+    padding: 10px;
+    height: 55.5px;
+    float: left;
+    font-size: 50px;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+  }
+  ul li {
+    position: relative;
+  }
+  ul li::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #009688 transparent transparent;
+  } */
+/* CSS Variables
+  - Global Variable
+  - Local Variable
+  var(Variable Name, Fall Back Value"if variable does't exist")  
+  :root { --mainColor: blue ;}
+  .main { background-color: var(--mainColor, black);
+*/
+/* Flexible Box
+  For Parent 
+  - display: flex => To Start Flexible Box   , inline-flex
+  - flex-direction: row => Default Value
+  - flex-wrap: nowrap => Default Value
+  - flex-flow: [Flex-Direction] + [Flex-Wrap]   shorthand
+  - justify-content: flex-start => Default Value
+  - justify-items: flex-start => Default Value
+  - align-items: stretch => Default Value
+  - align-content: stretch => Default Value
+  For Child
+  - flex-grow: 0 => Default Value
+  - flex-shrink: 1 => Default Value
+  - order: 0 => Default Value
+  - flex-basis: auto => Default Value  same as width and height  change with flex direction
+  - flex: [Flex Grow] [Flex Shrink] [Flex Basis] 0 1 Auto
+  - align-self: auto => Default Value
+*/
+/* Filter
+   filter like photoshop 👍  
+   blur()   opacity()    grayscale()
+*/
+/* Gradients 
+   you can do "after" and give it bg gradients with multiple color 
+*/
+/* Edit <p>
+contenteditable="true"  u can give this attr to <p> */
+/* Caret-color   & pointer-events
+  caret-color    the color of sympol that show and hide where you write
+  pointer-events:none;    prevent any click action 
+*/
+/* Fraction and auto
+   fraction  divide the remaining width on fraction  like 1fr 
+   auto the remaining width and min width its his content width
+*/
+/* Grid-template-areas
+.page {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+    "logo logo nav nav nav nav nav nav nav nav"
+    "cont cont cont cont cont cont cont . side side"
+    "foot foot foot foot foot foot foot foot foot foot";
+}
+h2 {
+  grid-area: logo;
+}
+nav {
+  grid-area: nav;
+}
+section {
+  grid-area: cont;
+}
+aside {
+  grid-area: side;
+}
+footer {
+  grid-area: foot;
+} */
+/* Grid-column
+  grid-column:"start" /  span  "number of columns" ;
+ */
+/* Autofill & minmax
+  grid-template-columns:repeat(autofill, minmax(200px, 1fr));
+  autofill number of divs with 200px width if there empty space width 1fr
+*/
+/* CSS Selectors
+  - *
+  - Element => [p, div, h2]
+  - Element OtherElement => div p
+  - .class-name
+  - #id-name
+  - .parent .child
+  - .class-one.class-two    element has both classes together
+  - .class-name div, .class-name p
+  - Element.class-name => p.class-name    all element tag that have this class-name
+  - .parent > .child => Direct Child    child under parent direct not nested
+  
+  - Element + Other Element => [div + p]   p must his previouse element div
+  - Element ~ Other Elements => [p ~ div]  div must has previouse brother"same level" p 
+  - [Attribute]
+  - Element[Attribute]
+  - [Attribute=Value]
+  - Element[Attribute=Value] => input[type="submit"]
+  - [Attribute~=Value] => Contains A Word
+  - [Attribute*=Value] => Contains A Atring
+  - [Attribute^=Value] => Start With A String
+
+  - :first-child
+  - :last-child
+  - :first-of-type
+  - :last-of-type
+  - :only-child
+
+  - :not(Selectors)
+  - :nth-child(n)    :nth-child(2)   means second child       p:nth-child(2)   means second child  and its p      :nth-child(even)  or odd
+  - :nth-last-child(n)   counting from the last element 
+  - :nth-of-type(n)     p:nth-of-type(2)   means second p child
+  - :nth-last-of-type(n)
+
+  - :root
+  - :checked
+  - :empty
+  - :disabled
+  - :required
+  - :focus
+  - ::selection
+  - ::placeholder
+*/
