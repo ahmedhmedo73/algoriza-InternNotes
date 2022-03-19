@@ -1,0 +1,212 @@
+@import 'layout/global-rules';
+@import 'variables/colors';
+
+
+// global and local variables
+// $color:"black";
+// div{
+//     background-color: $color;
+// }
+// p{
+//     $color:"blue" !global;
+//     background-color: $color;
+// }
+// h2{
+//     background-color: $color;
+// }
+
+//selectors 
+// .parent {
+//    > .child1{
+//         color: red; 
+//    }
+//    &.child2{
+//         color: red; 
+//    }
+// }
+// .parent > {
+//    .child1{
+//         color: red; 
+//    }
+//    .child2{
+//         color: red; 
+//    }
+//    .res{
+//       color:black;
+//    }   
+// }
+
+
+//Property Declarations
+// .box{
+//     font: {
+//         size: 10px;
+//         weight: 700;
+//     }
+//     border: 1px solid red{
+//        top: 2px;
+//     }
+// }
+
+//extends
+// .main-box{
+//     background-color: aqua;
+//     color: black;
+// }
+// .alt-box{
+//     @extend .main-box;
+//     color: yellow; 
+// }
+
+
+//placeholder   if you want to extend class and this is unusable
+// %main-box{
+//     background-color: aqua;
+//     color: black;
+// }
+// .alt-box{
+//     @extend %main-box;
+//     color: yellow; 
+// }
+
+
+//control-flow   if conditions
+// $theme:"light";
+// .page{
+//     @if $theme == "light" {
+//         background-color: aquamarine;
+//         color: black;
+//     } @else {
+//         background-color: black;
+//         color: white;
+//     }
+// }
+// 
+//
+// $rounded: false;
+// .box{
+//     border-radius: if($rounded, 6px , null);
+// }
+
+
+
+//@error "this error is very dangrous #{variable-name}";
+
+
+// Interpolation
+// $company: "falcon";
+// $position: "right";
+// .ad-#{$company}-#{unique-id()} {
+//   font-size: 20px;
+//   background-image: url("imgs/#{$company}.png");
+//   #{$position}: 0;
+// }
+// .ad-#{unique-id()} {
+//   font-weight: bold;
+// }
+
+
+$company:"";
+// Comments
+// This Comment Will Not Show In CSS File
+/* This Comment Will Show In CSS File But Not In Compressed Mode */
+/*! This Comment Will Show In CSS File And In Compressed Mode */
+// .box /* Multiple
+// Lines
+// Comment */ {
+//   font-size: 20px; // Inline Comment
+// }
+/* This Comment Contains Interpolation => #{$company} */
+
+
+
+//mixin
+// @mixin list-reset {
+//     padding: 0;    list-style: none;
+//   }
+// @mixin circle($dimensions) {
+//     border-radius: 50%;    width: $dimensions;
+//   }
+//   ul.links {
+//     @include list-reset;
+//   } 
+//   .center-circle {
+//     @include circle(400px);
+//     @include centering;
+//   }
+
+
+
+// Loop => For    "through" includes 10    otherwise  "to" dont include 10
+// @for $i from 1 through 10 {
+//     .class-#{$i} {
+//       font-size: #{$i + 10px};
+//     }
+//   }
+
+
+
+// Each + Maps
+// $themes: red, green, blue, orange;
+// @each $theme in $themes {
+//   .#{$theme}-theme {
+//     .product {
+//       background-color: white;
+//       border-bottom: 2px solid $theme;
+//       .title {
+//         color: $theme;
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
+// $socials: ("facebook": blue,"youtube": red,"github": black,"twitter": indianred,);
+// @each $name, $color in $socials {
+//   .#{$name} {
+//     background-color: $color;
+//     color: white;
+//     &::before {
+//       content: $name;
+//     }
+//   }
+// }
+// $classes: "one" 20px red, "two" 15px green, "three" 22px blue;
+// @each $class, $font, $color in $classes {
+//   .#{$class} {
+//     font-size: $font;
+//     background-color: $color;
+//     color: white;
+//     padding: $font / 2;
+//   }
+// }
+
+
+
+// Loop => While
+// $start: 1;
+// @while $start <= 10 {
+//   .width-#{$start * 100} {
+//     width: $start * 100px;
+//     height: ($start * 100px) / 2;
+//   }
+//   $start: $start + 1;
+// }
+
+
+
+//function
+// @function half($size) {
+//     @return $size / 2;
+//   }
+//   @function calculate($sizes...) {     //arguments
+//     $total: 0;
+//     @each $size in $sizes {
+//       $total: $total + $size;
+//     }
+//     @return $total;
+//   }
+
+
+
+
+
