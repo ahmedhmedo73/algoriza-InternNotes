@@ -1,9 +1,34 @@
 /* Console
     // console.log("%c error message", "color:black; background:black;");
     // console.error("lol");
+    // console.table(["ahmed","kamel","ahmed"]);
 */ 
 /* Falsy values 
  [0,false,null,undefined,emptyString ('' or "")] 
+*/
+/* Arithmetic Operators
+  + Addition
+  - Subtraction
+  * Multiplication
+  / Division
+  % Modulus (Division Remainder)
+  ++ Increment [ Post / Pre ]
+  -- Decrement [ Post / Pre ]
+
+  ** Exponentiation (ES7)
+*/
+/* Comparison Operators
+  - == Equal
+  - != Not Equal
+
+  - === Identical
+  - !== Not Identical
+
+  - > Larger Than
+  - >= Larger Than Or Equal
+
+  - < Smaller Than
+  - <= Smaller Than Or Equal
 */
 /* Logical operators
 
@@ -16,19 +41,26 @@
     // console.log(8||9||10);
     // console.log(""||0||""||null);
 */
+/* Assignment Operators
+   =   +=   -=   /=    *=   %= 
+*/ 
 /* Special perators
+
+   1_000_000  ==  1000000  ==  1e6  == 10**6  //syntax sugar
+   +"100" converts string to number
+   !! convert any var to bool datatype
+   //nullish Coalescing
+   ?? same as ||      but for first parameter   all values are true except  null 
    comma operator ","    u can declare  mutiple identifier in same var    // var first , second ;
+
    typeof       //console.log(typeof test );      number
-   ternary      //  (expression) ? true : false;
+   ternary      //  (expression) ? true : false;    
    delete       deletes a property from the object.
    new          creates an instance (object)
    void         it discards the expression's return value.
    yield        ?!!
    in           In Operator checks if object has the given property      //if ('make' in car){}   car = { make: 'Honda', model: 'Accord'}
    instanceof	checks if the object is an instance of given type
-*/ 
-/* Assignment Operators
-   =   +=   -=   /=    *=   %= 
 */ 
 /* Implicit coercion 
    forceing cast datatype
@@ -53,46 +85,62 @@
    //alert    alert("message");
    //confirm  var action = confirm("message");   true "ok" or false "cancel"
 */ 
-/* Built-in functions
-   parseInt("string");    "ahmed200"  =>   nan            "200ahmed"  => 200
-   parseInt("string","type");    ("010","2")  =>  2     ("010","8")  =>  8     ("010","16")  =>  16
-   parseFloat("string");    same as normal parseInt  plus      "200.02ahmed"  => 200.02 
-   isFinite(value)    return true if value is numeric type     false for other
-   isNaN()            opposite  isFinite()
-*/ 
-/* variable scope
-    we should write "var" before variable name if we want to set scope for variable
-            global scope   and   local scope "local means within functional scope"
-    if we did'nt write "write"  variable will be global by default 
-    if define the same var twice  in global and again in local scope   
-        this called shadowing
-            will ignore the global scope and work with the local one
-*/ 
 /* string
-    //contructor              var myStr = new String("welcome!!");
-    //string function         var myStr = String("welcome!!");
-    //literal creation        var myStr = "sc welcome to javascript!!";
+    //contructor              var str = new String("welcome!!");
+    //string function         var str2 = String("  ahmed   ");
+    //literal creation        var str = "sc welcome to javascript!!";
     
-    myStr.charAt(1)           => 'c'
-    myStr.indexOf('c')        => 3   if didn't find char will return -1
-    myStr.indexOf("sc")       => 0
-    myStr.lastIndexOf("sc")   => 18
-    myStr.substring(3,10)     => "welcome"    note that myStr[10] not included
-    myStr.split(" ")          => ["sc","welcome","to",....]
-    myStr.slice(7,13)         => "ome to"  
-    myStr.slice(7);           => from 7 to end  "ome to javascript!!"     
-    myStr.slice(-12);         => counting from the end
-    
+    str.includes("welcome") => true     [ecs7]
+    str.charAt(1)           => 'c'
+    str.indexOf('c')        => 2                      //if didn't find char will return -1
+    str.indexOf("sc",8)     => 18                     //start search at index 8  
+    str.lastIndexOf("sc")   => 18                     //index of last "sc" in str
+    str.trim("")            => "ahmed"                //delete whitespace from the left and the right
 
+    str.substring(3,10)     => "welcome"              //str[10] not included
+    str.substr(3,10)        => "welcome to"              //return  10 char  from 3rd index 
+
+    str.split(" ")          => ["sc","welcome",...]   //return array  to the end
+    str.split(" ",2)        => ["sc","welcome"]       //return array  first two indexs
+   
+    str.slice(7);           => "ome to javascript!!"  //from 7 to end   
+    str.slice(7,13)         => "ome to"               //start = 7    end = 13
+    str.slice(-12);         => "javascript!!"         //counting from the end
+
+    [ecs6]
+    str2.repeat(2);         => "  ahmed     ahmed   "
 */ 
 /* Array
-   var myArr = [1,2,3,5];
+   var myArr = [1,2,3,5];      // if you want to copy array by value   =>    new = old.slice();
+
+   //if myArr.length = 4     and arr has 5 element    the 5th element will be deleted
+
 
    .shift & .unshift  work in arr[0]           pop & push work in arr[length-1]
-   shift == pop       unshift ==  push
+   shift == pop       unshift ==  push    
    myArr.join(",");   => 1,2,3,4,5        myArr.join("*");   => 1*2*3*4*5          Note: myArr will turn into string
    myArr.reverse();   =>5,4,3,2,1   
-   myArr.sort(function comapr(a,b) {return a-b;});    sort number
+   myArr.sort(function compare(a,b) {return a-b;});    sort number
+   Array.isArray(myArr);  =>   true;
+   myArr = arr.concat(arr1,arr2);
+   myArr.splice(start,count, "element to add at index start");   //delete and replace
+
+*/ 
+/* Loop
+
+   let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+   let colors = ["Red", "Green", "Black"];
+
+   mainLoop: for (let i = 0; i < products.length; i++) {
+        console.log(products[i]);
+        nestedLoop: for (let j = 0; j < colors.length; j++) {
+            console.log(`- ${colors[j]}`);
+            if (colors[j] === "Green") {
+             break mainLoop;
+            }
+        }
+    }
+    //use label to determine  wich loop you want to break or continue
 */ 
 /* Functions
    
@@ -118,12 +166,51 @@
            return a+b;
        }
    }
-   var res = add();
-   res();     // to excute
+   var res = add();      res();     // to excute
+   
+   //Higher Order Functions
+   ---> is a function that accepts functions as parameters and/or returns a function.
+*/
+/* Function object properties
 
+  //Arguments     collection recieve all parameter as array
+  - Rest Parameters   ==  arguments
+  - Only One Allowed
+  - Must Be Last Element   (x,y,...arguments)
+    function sum (x,y){return x+y}      sum(1,2);            //x ,y   called parameters        //1,2     called arguments  
+
+   //arguments.length
+   var fun = function(...arguments){    //you can change the name to whatever you want  // you can leave it empty and default = arguments  
+       var sum=0;
+       for (var i=0;i<arguments.length;i++){
+            sum+=arguments[i]; 
+       }
+       return sum;
+   }
+   
+   fun(1,2,3,4);   => 10
+*/ 
+/* Function object methods
+    [1,2,"jk"] 
+    []
+    var arr= [1,2,3,"abc"];
+    var str = "this is javascript"
+    
+    //function borrowing using apply 
+    console.log((arr.join.apply(str,["*"])));
+
+    //function borrowing using call 
+    console.log((arr.join.call(str,"*")));
+
+    //binding
+    var res= (arr.join.bind(str));   
+    console.log(res("*"));
 */ 
 /* Object
    
+   //Dot notation        employee.nm="ahmed";
+   //Braket notation     employee[nm] ="ahmed";
+
    //factory method
    function employee(nm,dept,sal){
        return {
@@ -202,36 +289,6 @@
   })()
   you can't use outside this scope
 */ 
-/* Function object properties
-   
-   //Arguments  collection recieve all parameter as array
-   //arguments.length
-   var fun = function(){
-       var sum=0;
-       for (var i=0;i<arguments.length;i++){
-            sum+=arguments[i]; 
-       }
-       return sum;
-   }
-   
-   fun(1,2,3,4);   => 10
-*/ 
-/* Function object methods
-    [1,2,"jk"] 
-    []
-    var arr= [1,2,3,"abc"];
-    var str = "this is javascript"
-    
-    //function borrowing using apply 
-    console.log((arr.join.apply(str,["*"])));
-
-    //function borrowing using call 
-    console.log((arr.join.call(str,"*")));
-
-    //binding
-    var res= (arr.join.bind(str));   
-    console.log(res("*"));
-*/ 
 /* Closure
    When you declare a variable in a function, you can only access it in the function.
    These variables are said to be scoped to the function. If you define any inner function within another function,
@@ -253,4 +310,61 @@ var res =outerfun();
 res[0]();
 res[1]();
 res[2]();
+*/ 
+/* Pro tips
+   null,array and functions   are object type
+   stopPropegation     run  child func and prevent func of parent to run
+*/ 
+/* Variables
+  //scope
+    we should write "var" before variable name if we want to set scope for variable
+            global scope   and   local scope "local means within functional scope"
+    if we did'nt write "write"  variable will be global by default 
+    if define the same var twice  in global and again in local scope   
+        this called shadowing
+            will ignore the global scope and work with the local one
+  Var
+  - Redeclare (Yes)
+  - Access Before Declare (Undefined) hoisted
+
+  Let
+  - Redeclare (No => Error)
+  - Access Before Declare (Error) not hoisted
+
+  Const
+  - Redeclare (No => Error)
+  - Access Before Declare (Error)  not hoisted
+*/
+/* Number Methods
+  //call   Number.method()     method()       100..method
+  - MAX_SAFE_INTEGER     MAX_VALUE  
+  - toString()   convert to string 
+  - toFixed(2)   100.756467485   =>   100.75
+  - parseInt("string");    "ahmed200"  =>   nan            "200ahmed"  => 200
+  - parseInt("string","type");    ("010","2")  =>  2     ("010","8")  =>  8     ("010","16")  =>  16
+  - parseFloat("string");    same as normal parseInt  plus      "200.02ahmed"  => 200.02 
+  - isFinite(value)    return true if value is numeric type     false for other
+  - isNaN()     opposite     isFinite()
+  - isInteger() [ES6]
+*/ 
+/* Scope
+   functional scope      function(){};
+   block scope   if(){}   or   for(){};
+   lexical scope    //A lexical scope in JavaScript means that a variable defined outside 
+                      a function can be accessible inside another function defined after the variable declaration. 
+                      But the opposite is not true; the variables defined inside a function will not be accessible outside that function.
+*/
+/* Map
+  --- method creates a new array
+  --- populated with the results of calling a provided function on every element
+  --- in the calling array.
+
+  Syntax map(callBackFunction(Element, Index, Array) { }, thisArg)
+  - Element => The current element being processed in the array.
+  - Index => The index of the current element being processed in the array.
+  - Array => The Current Array
+
+    let addSelf = myNums.map(function (element, index, arr) {
+         return element + element;
+    }, 10);
 */ 

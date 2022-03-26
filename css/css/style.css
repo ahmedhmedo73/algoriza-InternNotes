@@ -21,7 +21,7 @@ background-size: contain   cover     100% 100%
 
 */
 /* Text
-   text-indent:100px;       but space before the text
+   text-indent:100px;       put space before the text
    white-space:no-wrap;     only property has no-wrap  
    word-break:break-all;
    text-overflow:ellipsis;      text text...
@@ -150,14 +150,15 @@ background-size: contain   cover     100% 100%
   - align-self: auto => Default Value
 */
 /* Filter
-   filter like photoshop 👍  
+   filter like photoshop 
    blur()   opacity()    grayscale()
 */
 /* Gradients 
    you can do "after" and give it bg gradients with multiple color 
 */
 /* Edit <p>
-contenteditable="true"  u can give this attr to <p> */
+  contenteditable="true"  u can give this attr to <p>
+ */
 /* Caret-color   & pointer-events
   caret-color    the color of sympol that show and hide where you write
   pointer-events:none;    prevent any click action 
