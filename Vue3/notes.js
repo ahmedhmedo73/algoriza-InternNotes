@@ -36,3 +36,10 @@
      
     
 */ 
+/* Routing 
+   $route.params.id
+   
+   you can send params via router link in parent component and send it as props in child
+        "you have to write 'props: true' in route object in index.js"
+   
+*/
