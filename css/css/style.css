@@ -197,7 +197,7 @@ footer {
  */
 /* Autofill & minmax
   grid-template-columns:repeat(autofill, minmax(200px, 1fr));
-  autofill number of divs with 200px width if there empty space width 1fr
+  autofill number of divs with 200px width if there empty space width = 1fr
 */
 /* CSS Selectors
   - *
