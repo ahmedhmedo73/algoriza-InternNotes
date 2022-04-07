@@ -43,3 +43,7 @@
         "you have to write 'props: true' in route object in index.js"
    
 */
+/* computed
+   getter     depend on variables
+*/
+
