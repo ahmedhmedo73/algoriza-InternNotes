@@ -1,0 +1,60 @@
+## ngTemplate and ngContainer ? 
+
+
+## ViewChild ? 
+-- for directly accessing components and elements in your template.
+
+
+==
+html
+  <app-child></app-child>
+
+ts
+  @ViewChild(ChildComponent) childComponent!: ChildComponent;
+==
+
+and for multiple app-child
+
+==
+html
+  <app-child #child1></app-child>
+  <app-child #child2></app-child>
+
+ts
+  @ViewChild(ChildComponent) child1: ChildComponent;
+  @ViewChild(ChildComponent) child2: ChildComponent;
+
+
+
+## viewContainerRef ? 
+-- Is a reference to a container where views can be dynamically added or removed.
+
+====
+in html file
+ <div>
+      <button (click)="loadComponent()">Load Dynamic Component</button>
+      <ng-container #dynamicContainer></ng-container>
+ </div>
+
+in ts file
+@ViewChild('dynamicContainer', { read: ViewContainerRef, static: true })
+viewContainerRef!: ViewContainerRef;
+
+constructor(private resolver: ComponentFactoryResolver) {}
+
+  loadComponent() {
+    const componentFactory = this.resolver.resolveComponentFactory(MyDynamicComponent);
+    this.viewContainerRef.clear();
+    this.viewContainerRef.createComponent(componentFactory);
+  }
+=====
+
+Methods of ViewContainerRef
+Some of the key methods provided by ViewContainerRef are:
+
+createComponent: Creates and inserts a new component instance into the view container.
+createEmbeddedView: Creates and inserts an embedded view (usually from an Angular template) into the container.
+clear: Removes all views from the container.
+insert: Inserts an existing view into a specific position within the container.
+detach: Detaches a view from the container without destroying it.
+remove: Removes and destroys a view from the container.
